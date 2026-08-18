@@ -213,23 +213,24 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-[9000] flex items-center justify-center p-4 bg-obsidian/85 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-obsidian border-4 border-marigold p-6 sm:p-10 shadow-[10px_10px_0_#7A0606] my-8">
+    <div className="fixed inset-0 z-[9000] flex items-start sm:items-center justify-center bg-obsidian/90 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full sm:max-w-2xl bg-obsidian border-0 sm:border-4 border-marigold p-5 sm:p-10 sm:shadow-[10px_10px_0_#7A0606] sm:my-8 min-h-screen sm:min-h-0">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-cream hover:text-marigold p-2 font-bold"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-cream hover:text-marigold p-2 font-bold z-10 bg-carbon/80 sm:bg-transparent"
+          aria-label="Close registration modal"
         >
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         {!isSuccess ? (
           <div>
-            <div className="text-center mb-8">
+            <div className="text-center mb-6 sm:mb-8 pt-6 sm:pt-0">
               <span className="font-heading font-extrabold text-xs uppercase tracking-widest bg-marigold text-obsidian px-4 py-1 clip-polygon inline-block mb-2">
                 Register Free
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl text-smoke uppercase">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-smoke uppercase">
                 Claim Your Spot In The Arena
               </h2>
               <p className="font-body text-sm text-cream/80 mt-1">
@@ -473,40 +474,39 @@ export const RegisterModal: React.FC<RegisterModalProps> = ({
           </div>
         ) : (
           /* Confirmation Ticket Pass */
-          <div className="text-center py-4">
-            <div className="w-16 h-16 rounded-full bg-marigold text-obsidian flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-[0_0_20px_rgba(253,181,21,0.6)]">
+          <div className="text-center py-4 pt-10 sm:pt-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-marigold text-obsidian flex items-center justify-center mx-auto mb-4 text-2xl sm:text-3xl font-bold shadow-[0_0_20px_rgba(253,181,21,0.6)]">
               ✓
             </div>
-            <h3 className="font-display text-3xl text-marigold uppercase mb-2">
+            <h3 className="font-display text-2xl sm:text-3xl text-marigold uppercase mb-2">
               Registration Confirmed!
             </h3>
             <p className="font-body text-sm text-smoke mb-6">
               Welcome to VYUGAM 2.0. Your spot in the arena is reserved.
             </p>
 
-            {/* Ticket Pass */}
-            <div className="bg-carbon border-2 border-marigold p-5 text-left font-mono text-xs text-cream space-y-2 mb-6 shadow-inner">
-              <div className="flex justify-between border-b border-carbon-2 pb-2">
-                <span>Participant:</span>
-                <strong className="text-smoke">{formData.name} ({formData.year} - {formData.dept})</strong>
+            <div className="bg-carbon border-2 border-marigold p-4 sm:p-5 text-left font-mono text-xs text-cream space-y-2 mb-6 shadow-inner">
+              <div className="flex flex-col xs:flex-row justify-between border-b border-carbon-2 pb-2 gap-1">
+                <span className="text-mustard">Participant:</span>
+                <strong className="text-smoke text-right">{formData.name} ({formData.year} - {formData.dept})</strong>
               </div>
-              <div className="flex justify-between border-b border-carbon-2 pb-2">
-                <span>Track:</span>
-                <strong className="text-marigold">{formData.event}</strong>
+              <div className="flex flex-col xs:flex-row justify-between border-b border-carbon-2 pb-2 gap-1">
+                <span className="text-mustard">Track:</span>
+                <strong className="text-marigold text-right">{formData.event}</strong>
               </div>
-              <div className="flex justify-between border-b border-carbon-2 pb-2">
-                <span>Team Size:</span>
-                <strong className="text-smoke">{formData.teamSize}</strong>
+              <div className="flex flex-col xs:flex-row justify-between border-b border-carbon-2 pb-2 gap-1">
+                <span className="text-mustard">Team Size:</span>
+                <strong className="text-smoke text-right">{formData.teamSize}</strong>
               </div>
               {teamMembers.length > 0 && (
-                <div className="flex justify-between border-b border-carbon-2 pb-2">
-                  <span>Team Members:</span>
-                  <strong className="text-smoke">{teamMembers.map((m) => m.name).join(', ')}</strong>
+                <div className="flex flex-col xs:flex-row justify-between border-b border-carbon-2 pb-2 gap-1">
+                  <span className="text-mustard">Team Members:</span>
+                  <strong className="text-smoke text-right">{teamMembers.map((m) => m.name).join(', ')}</strong>
                 </div>
               )}
-              <div className="flex justify-between">
-                <span>Date & Venue:</span>
-                <strong className="text-emerald-400">24 Sept 2026 @ IT Hall, PACET</strong>
+              <div className="flex flex-col xs:flex-row justify-between gap-1">
+                <span className="text-mustard">Date &amp; Venue:</span>
+                <strong className="text-emerald-400 text-right">24 Sept 2026 @ IT Hall, PACET</strong>
               </div>
             </div>
 

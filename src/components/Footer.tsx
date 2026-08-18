@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
         </p>
 
         {/* Contact Chips */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-left mb-12">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 text-left mb-12">
           <a
             href="https://wa.me/917558108034"
             target="_blank"
@@ -77,21 +77,21 @@ export const Footer: React.FC = () => {
 
           <a
             href="mailto:Vyugam2k262.0@gmail.com"
-            className="bg-carbon border-2 border-mustard p-4 hover:border-marigold transition-all group col-span-1 sm:col-span-2 lg:col-span-1"
+            className="bg-carbon border-2 border-mustard p-4 hover:border-marigold transition-all group col-span-1 xs:col-span-2 lg:col-span-1"
           >
             <span className="font-mono text-[10px] uppercase tracking-widest text-marigold block mb-1">
               Official Email
             </span>
-            <div className="font-body font-semibold text-smoke text-xs flex items-center gap-2 truncate">
+            <div className="font-body font-semibold text-smoke text-xs flex items-center gap-2 break-all">
               <Mail className="w-4 h-4 text-marigold flex-shrink-0" /> Vyugam2k262.0@gmail.com
             </div>
           </a>
         </div>
 
         {/* Steve Jobs Quote */}
-        <div className="my-10 py-6 border-y border-marigold/20">
-          <p className="font-heading italic text-xl sm:text-2xl text-marigold tracking-wide">
-            "Innovation distinguishes between a leader and a follower."
+        <div className="my-8 sm:my-10 py-6 border-y border-marigold/20">
+          <p className="font-heading italic text-lg sm:text-xl md:text-2xl text-marigold tracking-wide px-2">
+            &quot;Innovation distinguishes between a leader and a follower.&quot;
           </p>
           <p className="font-mono text-xs uppercase tracking-widest text-mustard mt-2">
             — Steve Jobs
@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Social Chips */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
           <a
             href="https://www.instagram.com/pacet_castle"
             target="_blank"

@@ -50,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister }) => {
   const pad = (n: number) => String(n).padStart(2, '0');
 
   return (
-    <header id="hero" className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden hero-bg pb-20">
+    <header id="hero" className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden hero-bg pb-16 sm:pb-20">
       {/* Radial streak tunnel */}
       <div className="hero-streaks-bg" />
 
@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister }) => {
       </svg>
 
       {/* ====== College Header Strip ====== */}
-      <div className="relative z-30 w-full max-w-5xl mx-auto flex flex-col items-center text-center pt-14 md:pt-16 px-4">
+      <div className="relative z-30 w-full max-w-5xl mx-auto flex flex-col items-center text-center pt-[90px] sm:pt-[88px] md:pt-[90px] px-4">
         <div className="flex gap-3 mb-4 flex-wrap justify-center">
           {['Learn', 'Work', 'Succeed'].map((t) => (
             <span key={t} className="font-heading font-extrabold text-xs uppercase tracking-widest bg-marigold text-obsidian px-4 py-1 clip-polygon">
@@ -151,7 +151,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister }) => {
           Presents
         </span>
 
-        <h1 className="font-display text-5xl sm:text-7xl lg:text-9xl text-crimson uppercase leading-none stroke-gold drop-shadow-hero">
+        <h1 className="font-display text-[2.8rem] xs:text-5xl sm:text-7xl lg:text-9xl text-crimson uppercase leading-none stroke-gold drop-shadow-hero">
           VYUGAM 2.0
           <span className="block font-heading font-extrabold italic text-lg sm:text-2xl lg:text-3xl text-marigold tracking-wider mt-3 stroke-none" style={{ textShadow: '2px 2px 0 #050505' }}>
             Strategic Vision. Intelligent Innovation.
@@ -200,16 +200,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister }) => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center mt-8">
+        <div className="flex flex-col xs:flex-row flex-wrap gap-3 sm:gap-4 justify-center mt-8 w-full px-2 sm:px-0">
           <button
             onClick={onOpenRegister}
-            className="font-heading font-extrabold text-base sm:text-lg tracking-wider uppercase text-obsidian bg-marigold border-[3px] border-obsidian px-8 py-4 shadow-[5px_5px_0_#C1121F] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[8px_8px_0_#C1121F] btn-pulse transition-all cursor-pointer"
+            className="font-heading font-extrabold text-sm sm:text-base lg:text-lg tracking-wider uppercase text-obsidian bg-marigold border-[3px] border-obsidian px-6 sm:px-8 py-3 sm:py-4 shadow-[5px_5px_0_#C1121F] hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[8px_8px_0_#C1121F] btn-pulse transition-all cursor-pointer w-full xs:w-auto"
           >
             Register Free
           </button>
           <a
             href="#arenas"
-            className="font-heading font-bold text-base sm:text-lg tracking-wider uppercase text-marigold bg-transparent border-[3px] border-marigold px-8 py-4 hover:bg-marigold hover:text-obsidian transition-colors inline-block"
+            className="font-heading font-bold text-sm sm:text-base lg:text-lg tracking-wider uppercase text-marigold bg-transparent border-[3px] border-marigold px-6 sm:px-8 py-3 sm:py-4 hover:bg-marigold hover:text-obsidian transition-colors inline-block text-center w-full xs:w-auto"
           >
             Explore Events
           </a>

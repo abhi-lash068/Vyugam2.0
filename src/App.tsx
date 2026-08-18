@@ -73,21 +73,22 @@ export const App: React.FC = () => {
 
       {/* Floating Action Controls */}
       {showFloatingBtns && (
-        <div className="fixed bottom-6 right-6 z-[800] flex flex-col items-end gap-3 animate-fadeIn">
+        <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-[800] flex flex-col items-end gap-2 sm:gap-3 animate-fadeIn pb-[env(safe-area-inset-bottom,0)]">
           <button
             onClick={() => handleOpenRegister()}
-            className="font-heading font-extrabold text-sm uppercase tracking-wider text-obsidian bg-marigold border-2 border-obsidian px-5 py-3 shadow-[4px_4px_0_#C1121F] hover:-translate-y-1 hover:shadow-[6px_6px_0_#C1121F] transition-all flex items-center gap-2"
+            className="floating-register-btn font-heading font-extrabold text-xs sm:text-sm uppercase tracking-wider text-obsidian bg-marigold border-2 border-obsidian px-3 sm:px-5 py-2 sm:py-3 shadow-[4px_4px_0_#C1121F] hover:-translate-y-1 hover:shadow-[6px_6px_0_#C1121F] transition-all flex items-center gap-1.5 sm:gap-2"
           >
-            <Zap className="w-4 h-4 fill-current text-obsidian" />
-            Register Now
+            <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current text-obsidian" />
+            <span className="hidden xs:inline">Register Now</span>
+            <span className="xs:hidden">Register</span>
           </button>
 
           <button
             onClick={scrollToTop}
             aria-label="Back to Top"
-            className="w-12 h-12 bg-carbon text-marigold border-2 border-marigold flex items-center justify-center shadow-[3px_3px_0_#7A0606] hover:bg-marigold hover:text-obsidian hover:-translate-y-1 transition-all"
+            className="w-9 h-9 sm:w-12 sm:h-12 bg-carbon text-marigold border-2 border-marigold flex items-center justify-center shadow-[3px_3px_0_#7A0606] hover:bg-marigold hover:text-obsidian hover:-translate-y-1 transition-all"
           >
-            <ArrowUp className="w-5 h-5" />
+            <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
       )}

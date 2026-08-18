@@ -51,20 +51,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister }) => {
           scrolled ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
-        <div className="flex items-center justify-center gap-3 py-1.5 px-4 text-xs flex-wrap">
-          <span className="font-heading font-extrabold uppercase tracking-widest text-obsidian bg-marigold px-2.5 py-0.5 clip-polygon">
+        <div className="flex items-center justify-center gap-2 sm:gap-3 py-1 sm:py-1.5 px-3 sm:px-4 text-[10px] sm:text-xs flex-wrap">
+          <span className="font-heading font-extrabold uppercase tracking-widest text-obsidian bg-marigold px-2 sm:px-2.5 py-0.5 clip-polygon">
             Learn
           </span>
-          <span className="font-mono text-cream/90 text-[11px]">
-            An Autonomous Institution &middot; Accredited by NBA &amp; NAAC with 'A' Grade
+          <span className="font-mono text-cream/90 text-[10px] sm:text-[11px] text-center">
+            An Autonomous Institution &middot; Accredited by NBA &amp; NAAC with &apos;A&apos; Grade
           </span>
-          <span className="font-heading font-extrabold uppercase tracking-widest text-obsidian bg-marigold px-2.5 py-0.5 clip-polygon">
+          <span className="font-heading font-extrabold uppercase tracking-widest text-obsidian bg-marigold px-2 sm:px-2.5 py-0.5 clip-polygon">
             Work
           </span>
-          <span className="font-mono text-cream/90 text-[11px] hidden sm:inline">
+          <span className="font-mono text-cream/90 text-[10px] sm:text-[11px] hidden sm:inline">
             Pollachi, Coimbatore &ndash; 642002
           </span>
-          <span className="font-heading font-extrabold uppercase tracking-widest text-obsidian bg-marigold px-2.5 py-0.5 clip-polygon">
+          <span className="font-heading font-extrabold uppercase tracking-widest text-obsidian bg-marigold px-2 sm:px-2.5 py-0.5 clip-polygon">
             Succeed
           </span>
         </div>
@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenRegister }) => {
       {/* Sticky Nav Header */}
       <nav
         className={`fixed left-0 right-0 z-[500] transition-all duration-300 border-b-2 border-marigold backdrop-blur-md bg-obsidian/90 ${
-          scrolled ? 'top-0 py-3 px-6 md:px-12' : 'top-7 py-4 px-6 md:px-12'
+          scrolled ? 'top-0 py-2 sm:py-3 px-4 sm:px-6 md:px-12' : 'top-[28px] sm:top-7 py-2.5 sm:py-4 px-4 sm:px-6 md:px-12'
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
