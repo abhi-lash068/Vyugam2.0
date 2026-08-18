@@ -251,6 +251,7 @@
 .arena-hover:hover { transform: rotate(-1deg) translate(-4px, -4px); }
 .arena-hover-even:hover { transform: rotate(1deg) translate(-4px, -4px); }
 
+<<<<<<< HEAD
 /* ============================================================
    MOBILE-FIRST RESPONSIVE OVERRIDES
    ============================================================ */
@@ -307,3 +308,48 @@ html, body { overflow-x: hidden; }
     padding: 0.5rem 0.875rem;
   }
 }
+=======
+/* ---------- 3D Gallery styles ---------- */
+.gallery-3d {
+  perspective: 1400px;
+  perspective-origin: 50% 40%;
+  -webkit-perspective: 1400px;
+}
+.gallery-3d-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  transform-style: preserve-3d;
+}
+.gallery-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 400ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+}
+.gallery-card:active { transition-duration: 160ms; }
+.gallery-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  backface-visibility: hidden;
+  transform-origin: center center;
+}
+.gallery-card .card-deco {
+  position: absolute; inset: 0; pointer-events: none; transition: opacity 300ms; opacity: 0;
+}
+.gallery-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.65); }
+
+/* subtle slow rotate of the whole grid for an animated effect */
+.gallery-tilt-anim { animation: gallery-sway 12s ease-in-out infinite; }
+@keyframes gallery-sway {
+  0% { transform: rotateX(2deg) rotateY(-1deg); }
+  50% { transform: rotateX(-1.5deg) rotateY(1deg); }
+  100% { transform: rotateX(2deg) rotateY(-1deg); }
+}
+
+>>>>>>> 04702f3 (updated)

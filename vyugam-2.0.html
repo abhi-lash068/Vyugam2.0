@@ -1638,12 +1638,24 @@
       height: 110px;
       margin: 0 auto 18px;
       position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 3px solid rgba(253,181,21,0.12);
     }
 
     .member-avatar svg {
       width: 100%;
       height: 100%;
       filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.55));
+    }
+
+    .member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      -webkit-user-drag: none;
+      user-select: none;
     }
 
     .member-role-tag {
@@ -2187,6 +2199,12 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* 3D gallery styles for static page */
+    .gallery-grid { perspective: 1200px; perspective-origin: 50% 40%; }
+    .gallery-grid .gallery-thumb { border-radius:6px; transition: transform 350ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms; transform-style: preserve-3d; backface-visibility: hidden; }
+    .gallery-grid .gallery-thumb:hover { transform: translateY(-8px) rotateX(4deg) rotateY(-6deg) translateZ(8px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+    #galleryModal { display:none; }
   </style>
 </head>
 
@@ -2717,6 +2735,31 @@
       </div>
     </div>
   </section>
+  </section>
+
+  <!-- ============ SECTION: GALLERY ============ -->
+  <section class="section section-gallery" id="gallery">
+    <div class="section-inner reveal">
+      <span class="section-tab">Gallery</span>
+      <h2 class="section-heading">Event Photos</h2>
+      <p class="section-body">Moments captured from our events — click any photo to enlarge.</p>
+    </div>
+
+    <div class="gallery-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap:12px; padding:24px 18px; max-width:1100px; margin:0 auto;">
+      <!-- Local images placed in public/images/ -->
+      <img class="gallery-thumb" src="public/images/image.png" alt="Event photo 1" style="width:100%; height:160px; object-fit:cover; cursor:pointer; border-radius:6px;" />
+      <img class="gallery-thumb" src="public/images/image2.jpeg" alt="Event photo 2" style="width:100%; height:160px; object-fit:cover; cursor:pointer; border-radius:6px;" />
+      <img class="gallery-thumb" src="public/images/image3.jpeg" alt="Event photo 3" style="width:100%; height:160px; object-fit:cover; cursor:pointer; border-radius:6px;" />
+      <img class="gallery-thumb" src="public/images/image4.jpeg" alt="Event photo 4" style="width:100%; height:160px; object-fit:cover; cursor:pointer; border-radius:6px;" />
+      <img class="gallery-thumb" src="public/images/photo1.svg" alt="Event photo 5" style="width:100%; height:160px; object-fit:cover; cursor:pointer; border-radius:6px;" />
+      <img class="gallery-thumb" src="public/images/photo2.svg" alt="Event photo 6" style="width:100%; height:160px; object-fit:cover; cursor:pointer; border-radius:6px;" />
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="galleryModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+      <img id="galleryModalImg" src="" alt="Expanded" style="max-width:95%; max-height:95%; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.7);" />
+    </div>
+  </section>
 
   <!-- ============ SECTION 5B: ASSOCIATION MEMBERS ============ -->
   <section class="section section-members" id="members">
@@ -2729,17 +2772,7 @@
     <div class="members-grid">
       <div class="member-card reveal">
         <div class="member-avatar">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="av1" cx="35%" cy="30%" r="75%">
-                <stop offset="0%" stop-color="#FDB515" />
-                <stop offset="100%" stop-color="#7A0606" />
-              </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="46" fill="url(#av1)" stroke="#050505" stroke-width="4" />
-            <circle cx="50" cy="40" r="16" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-            <path d="M22 88c2-18 12-28 28-28s26 10 28 28" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-          </svg>
+          <img src="public/images/abhilash.jpeg" alt="Mr. H. Abhilash" />
         </div>
         <span class="member-role-tag">Secretary</span>
         <div class="member-name">Mr. H. Abhilash</div>
@@ -2748,59 +2781,29 @@
 
       <div class="member-card reveal">
         <div class="member-avatar">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="av2" cx="35%" cy="30%" r="75%">
-                <stop offset="0%" stop-color="#FF4A12" />
-                <stop offset="100%" stop-color="#7A0606" />
-              </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="46" fill="url(#av2)" stroke="#050505" stroke-width="4" />
-            <circle cx="50" cy="40" r="16" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-            <path d="M22 88c2-18 12-28 28-28s26 10 28 28" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-          </svg>
+          <img src="public/images/arundhathi.jpeg" alt="Ms. C. Arundhathi" />
         </div>
         <span class="member-role-tag">Joint Secretary</span>
-        <div class="member-name">Ms. M. Madhusree</div>
-        <a href="tel:6381359507" class="member-contact">📞 6381359507</a>
+        <div class="member-name">Ms. C. Arundhathi</div>
+        <a href="tel:8667718766" class="member-contact">📞 8667718766</a>
       </div>
 
       <div class="member-card reveal">
         <div class="member-avatar">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="av3" cx="35%" cy="30%" r="75%">
-                <stop offset="0%" stop-color="#D99A00" />
-                <stop offset="100%" stop-color="#7A0606" />
-              </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="46" fill="url(#av3)" stroke="#050505" stroke-width="4" />
-            <circle cx="50" cy="40" r="16" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-            <path d="M22 88c2-18 12-28 28-28s26 10 28 28" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-          </svg>
+          <img src="public/images/rubeswari.jpeg" alt="Ms. M. Rubeswari" />
         </div>
         <span class="member-role-tag">Additional Secretary</span>
-        <div class="member-name">Mr. S. Oviyan</div>
-        <a href="tel:8610234748" class="member-contact">📞 8610234748</a>
+        <div class="member-name">Ms. M. Rubeswari</div>
+        <a href="tel:8144055431" class="member-contact">📞 8144055431</a>
       </div>
 
       <div class="member-card reveal">
         <div class="member-avatar">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="av4" cx="35%" cy="30%" r="75%">
-                <stop offset="0%" stop-color="#C1121F" />
-                <stop offset="100%" stop-color="#050505" />
-              </radialGradient>
-            </defs>
-            <circle cx="50" cy="50" r="46" fill="url(#av4)" stroke="#050505" stroke-width="4" />
-            <circle cx="50" cy="40" r="16" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-            <path d="M22 88c2-18 12-28 28-28s26 10 28 28" fill="#101010" stroke="#F5E6B8" stroke-width="2" />
-          </svg>
+          <img src="public/images/vishnuprasad.jpeg" alt="Mr. H. Vishnuprasad" />
         </div>
         <span class="member-role-tag">Treasurer</span>
-        <div class="member-name">Mr. M. Kabilan</div>
-        <a href="tel:7598682797" class="member-contact">📞 7598682797</a>
+        <div class="member-name">Mr. H. Vishnuprasad</div>
+        <a href="tel:9360438970" class="member-contact">📞 9360438970</a>
       </div>
     </div>
   </section>
@@ -2940,20 +2943,20 @@
           <div class="contact-chip-value">💬 7558108034</div>
         </a>
         <a href="https://wa.me/916381359507" target="_blank" class="contact-chip">
-          <div class="contact-chip-label">Ms. M. Madhusree (Joint Secretary)</div>
+          <div class="contact-chip-label">Ms. M. Madhusree </div>
           <div class="contact-chip-value">💬 6381359507</div>
         </a>
         <a href="https://wa.me/918610234748" target="_blank" class="contact-chip">
-          <div class="contact-chip-label">Mr. S. Oviyan (Addl. Secretary)</div>
+          <div class="contact-chip-label">Mr. S. Oviyan </div>
           <div class="contact-chip-value">💬 8610234748</div>
         </a>
         <a href="https://wa.me/917598682797" target="_blank" class="contact-chip">
-          <div class="contact-chip-label">Mr. M. Kabilan (Treasurer)</div>
+          <div class="contact-chip-label">Mr. M. Kabilan </div>
           <div class="contact-chip-value">💬 7598682797</div>
         </a>
         <a href="mailto:Vyugam2k262.0@gmail.com" class="contact-chip">
           <div class="contact-chip-label">Official Email</div>
-          <div class="contact-chip-value">✉️ Vyugam2k262.0@gmail.com</div>
+          <div class="contact-chip-value">✉️Vyugam2k262.0@gmail.com</div>
         </a>
       </div>
 
@@ -3463,6 +3466,39 @@
       regForm.style.display = 'flex';
       regSuccessCard.classList.remove('active');
     });
+
+    // ---- Gallery lightbox handlers ----
+    const galleryModal = document.getElementById('galleryModal');
+    const galleryModalImg = document.getElementById('galleryModalImg');
+    document.querySelectorAll('.gallery-thumb').forEach((thumb) => {
+      thumb.style.transformOrigin = 'center center';
+      // click to open
+      thumb.addEventListener('click', (e) => {
+        const src = thumb.getAttribute('src');
+        if (!src || !galleryModal) return;
+        if (galleryModalImg) galleryModalImg.src = src;
+        galleryModal.style.display = 'flex';
+      });
+
+      // mouse move tilt
+      thumb.addEventListener('mousemove', (ev) => {
+        const rect = thumb.getBoundingClientRect();
+        const px = (ev.clientX - rect.left) / rect.width;
+        const py = (ev.clientY - rect.top) / rect.height;
+        const rotateY = (px - 0.5) * 10; // left-right
+        const rotateX = (0.5 - py) * 8; // top-bottom
+        thumb.style.transform = `translateZ(8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+      thumb.addEventListener('mouseleave', () => {
+        thumb.style.transform = '';
+      });
+    });
+    if (galleryModal) {
+      galleryModal.addEventListener('click', () => {
+        if (galleryModalImg) galleryModalImg.src = '';
+        galleryModal.style.display = 'none';
+      });
+    }
   </script>
 
 </body>

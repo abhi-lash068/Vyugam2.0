@@ -7,6 +7,7 @@ import { Schedule } from './components/Schedule';
 import { Prizes } from './components/Prizes';
 import { Venue } from './components/Venue';
 import { Team } from './components/Team';
+import { Gallery } from './components/Gallery';
 import { Footer } from './components/Footer';
 import { RegisterModal } from './components/RegisterModal';
 import { ToastContainer, ToastMessage } from './components/Toast';
@@ -66,6 +67,7 @@ export const App: React.FC = () => {
         <Schedule />
         <Prizes />
         <Venue />
+        <Gallery />
         <Team />
       </main>
 
