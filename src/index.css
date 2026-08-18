@@ -251,7 +251,7 @@
 .arena-hover:hover { transform: rotate(-1deg) translate(-4px, -4px); }
 .arena-hover-even:hover { transform: rotate(1deg) translate(-4px, -4px); }
 
-<<<<<<< HEAD
+
 /* ============================================================
    MOBILE-FIRST RESPONSIVE OVERRIDES
    ============================================================ */
@@ -308,7 +308,7 @@ html, body { overflow-x: hidden; }
     padding: 0.5rem 0.875rem;
   }
 }
-=======
+
 /* ---------- 3D Gallery styles ---------- */
 .gallery-3d {
   perspective: 1400px;
@@ -351,5 +351,3 @@ html, body { overflow-x: hidden; }
   50% { transform: rotateX(-1.5deg) rotateY(1deg); }
   100% { transform: rotateX(2deg) rotateY(-1deg); }
 }
-
->>>>>>> 04702f3 (updated)
