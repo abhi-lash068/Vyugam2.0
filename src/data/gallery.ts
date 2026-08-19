@@ -1,9 +1,9 @@
 export const galleryImages: string[] = [
   // Local images placed in public/images/
-  '/images/photo1.svg',
-  '/images/photo2.svg',
-  '/images/photo3.svg',
-  '/images/photo4.svg',
-  '/images/photo5.svg',
-  '/images/photo6.svg'
+  '/images/image.png',
+  '/images/image2.jpeg',
+  '/images/image3.jpeg',
+  '/images/image4.jpeg',
+  '/images/image5.png',
+  '/images/photo2.svg'
 ];
