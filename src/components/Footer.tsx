@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
             className="bg-carbon border-2 border-mustard p-4 hover:border-marigold transition-all group"
           >
             <span className="font-mono text-[10px] uppercase tracking-widest text-marigold block mb-1">
-              Ms. M. Madhusree (Joint Sec)
+              Ms. M. Madhusree 
             </span>
             <div className="font-body font-semibold text-smoke text-sm flex items-center gap-2">
               <Phone className="w-4 h-4 text-marigold" /> 6381359507
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
             className="bg-carbon border-2 border-mustard p-4 hover:border-marigold transition-all group"
           >
             <span className="font-mono text-[10px] uppercase tracking-widest text-marigold block mb-1">
-              Mr. S. Oviyan (Addl Sec)
+              Mr. S. Oviyan 
             </span>
             <div className="font-body font-semibold text-smoke text-sm flex items-center gap-2">
               <Phone className="w-4 h-4 text-marigold" /> 8610234748
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
             className="bg-carbon border-2 border-mustard p-4 hover:border-marigold transition-all group"
           >
             <span className="font-mono text-[10px] uppercase tracking-widest text-marigold block mb-1">
-              Mr. M. Kabilan (Treasurer)
+              Mr. M. Kabilan 
             </span>
             <div className="font-body font-semibold text-smoke text-sm flex items-center gap-2">
               <Phone className="w-4 h-4 text-marigold" /> 7598682797
